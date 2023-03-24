@@ -2,13 +2,13 @@ import { shuffle } from "underscore";
 
 /**
  * This function create new deck
- * @param {array<string>} tiposDeCarta
- * @param {array<string>} tiposEspeciales
- * @returns {array<string>} return new deck
+ * @param {Array<String>} tiposDeCarta Example ['C','D','H','S']
+ * @param {Array<String>} tiposEspeciales Example ['A','J','Q','K'];
+ * @returns {Array<String>} return new deck
  */
 export const crearDeck = (tiposDeCarta, tiposEspeciales) => {
-    if (!tiposDeCarta) throw new Error('Tipos de cartas es obligatorio');
-    if (!tiposEspeciales) throw new Error('Tipos de cartas es obligatorio');
+    if (!tiposDeCarta || tiposDeCarta.length === 0 ) throw new Error('Tipos de cartas es obligatorio como un arreglo de string');
+    if (!tiposEspeciales || tiposDeCarta.length === 0) throw new Error('Tipos de cartas es obligatorio como un arreglo de string');
     let deck = [];
     for( let i = 2; i <= 10; i++){
         for (const tipo of tiposDeCarta) {
