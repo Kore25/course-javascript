@@ -1,6 +1,4 @@
 import { valorCarta } from "./";
-const smallContadores = document.querySelectorAll('.contador');
-let countPlayer = 0, countComputer = 0;
 
 /**
  * Add point to the board
@@ -45,6 +43,9 @@ export const crearCarta = (carta, turno, imgCarta, divCartasJugadores) => {
  */
 export const determinarGanador = ( puntosJugadores ) => {
     if (!puntosJugadores) throw new Error('puntosJugadores es requerido');
+    const smallContadores = document.querySelectorAll('h3');
+    let countPlayer = smallContadores[0].innerText;
+    let countComputer = smallContadores[1].innerText;
     const [puntosMinimos, puntosComputadora] = puntosJugadores;
     setTimeout(() => {
         if ( puntosComputadora === puntosMinimos ) {
