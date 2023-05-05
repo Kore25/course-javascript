@@ -1,7 +1,16 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { enviramentsComponent } from './src/concepts/01-enviraments';
+import { callbacksComponent } from './src/concepts/02-callbacks';
+import { promisesComponent } from './src/concepts/03-promises';
+import { promisesRaceComponent } from './src/concepts/04-promise-race';
+import { asyncComponent } from './src/concepts/05-async';
+import { asyncAwaitComponent } from './src/concepts/06-async-await';
+import { asyncAwait2Component } from './src/concepts/07-async-await';
+import { forAwaitComponent } from './src/concepts/08-for-await';
+import { generetorsFunctionComponent } from './src/concepts/09-generators';
+import { generatorsAsyncComponent } from './src/concepts/10-generators-async';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -13,12 +22,9 @@ document.querySelector('#app').innerHTML = `
     </a>
     <h1>Hello Vite!</h1>
     <div class="card">
-      <button id="counter" type="button"></button>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
   </div>
-`
+`;
 
-setupCounter(document.querySelector('#counter'))
+const element = document.querySelector('.card');
+generatorsAsyncComponent(element);
